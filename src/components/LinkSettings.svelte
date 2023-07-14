@@ -10,7 +10,7 @@
     import { userAccount } from "../store/account";
  
     let platformToAdd;
-    let urlToAdd;
+    let urlToAdd="https://";
 
     const addToArray = (platform, url) => {
         if (platform && url) {

@@ -24,8 +24,8 @@
     initializeApp(firebaseConfig);
     const auth = getAuth();
 
-    let password="";
-    let emailAddress="";
+    let password = "";
+    let emailAddress = "";
 
     async function loginExistingUser(emailAddress, password) {
         //signinwithfirebase
@@ -40,51 +40,48 @@
             })
             .catch((error) => {
                 const errorCode = error;
-                
+
                 console.log("error", errorCode);
                 if (errorCode === "auth/wrong-password") {
-                    alertState.set("error")
+                    alertState.set("error");
                     alertMessage.set("Wrong password.");
                     setTimeout(() => {
-                        alertState.set("")
+                        alertState.set("");
                         alertMessage.set("");
                     }, 3000);
                 } else if (errorCode === "auth/invalid-email") {
-                    alertState.set("error")
+                    alertState.set("error");
                     alertMessage.set("Invalid email.");
                     setTimeout(() => {
-                        alertState.set("")
+                        alertState.set("");
                         alertMessage.set("");
                     }, 3000);
                 } else if (errorCode === "auth/missing-email") {
-                    alertState.set("error")
+                    alertState.set("error");
                     alertMessage.set("Missing email.");
                     setTimeout(() => {
-                        alertState.set("")
+                        alertState.set("");
                         alertMessage.set("");
                     }, 3000);
                 } else if (errorCode === "auth/missing-password") {
-                    alertState.set("error")
+                    alertState.set("error");
                     alertMessage.set("Missing password.");
                     setTimeout(() => {
-                        alertState.set("")
+                        alertState.set("");
                         alertMessage.set("");
                     }, 3000);
                 } else if (errorCode === "auth/user-not-found") {
-                    alertState.set("error")
+                    alertState.set("error");
                     alertMessage.set("User not found.");
                     setTimeout(() => {
-                        alertState.set("")
+                        alertState.set("");
                         alertMessage.set("");
                     }, 3000);
                 } else {
                     console.log("other error");
                 }
             });
-      
     }
-
-   
 </script>
 
 <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -97,10 +94,10 @@
                             .then(() => {
                                 // Sign-out successful.
                                 isLoggedIn.set(false);
-                                alertState.set("success")
+                                alertState.set("success");
                                 alertMessage.set("Logged out.");
                                 setTimeout(() => {
-                                    alertState.set("")
+                                    alertState.set("");
                                     alertMessage.set("");
                                 }, 3000);
                             })
@@ -132,26 +129,26 @@
                 <label class="label">
                     <span class="label-text">Password</span>
                 </label>
-                <input
-                    bind:value={password}
-                    type="text"
-                    placeholder="password"
-                    class="input input-bordered"
-                />
-                <!-- svelte-ignore a11y-label-has-associated-control -->
-                <label class="label">
-                    <!-- svelte-ignore a11y-invalid-attribute -->
-                    <a href="#" class="label-text-alt link link-hover"
-                        >Forgot password?</a
-                    >
-                </label>
-            </div>
-            <div class="form-control mt-6">
+                <form class="form-control mt-6">
+                    <input
+                        bind:value={password}
+                        type="text"
+                        placeholder="password"
+                        class="input input-bordered"
+                    />
+                    <!-- svelte-ignore a11y-label-has-associated-control -->
+                    <label class="label">
+                        <!-- svelte-ignore a11y-invalid-attribute -->
+                        <!-- <a href="#" class="label-text-alt link link-hover"
+                            >Forgot password?</a
+                        > -->
+                    </label>
+                </form>
+
                 <button
                     class="btn btn-primary"
                     on:click={() => loginExistingUser(emailAddress, password)}
                 >
-
                     Login
                 </button>
             </div>
