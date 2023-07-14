@@ -40,7 +40,7 @@
             >
                 <img
                     class="bg-neutral-focus text-neutral-content rounded-full w-24"
-                    src="src/assets/avatar.svg"
+                    src="../assets/avatar.svg"
                     alt=""
                 />
             </div>
@@ -78,11 +78,11 @@
                         >
                             <img
                                 class="linkLogo"
-                                src="src/assets/{link[0].platform}.svg"
+                                src="../assets/{link[0].platform}.svg"
                             />{link[0].platform}
                         </div>
                         <img style="width:20px; height:20px;"
-                            src="src/assets/Arrow-002.svg"
+                            src="../assets/Arrow-002.svg"
                         /></button
                     >
 

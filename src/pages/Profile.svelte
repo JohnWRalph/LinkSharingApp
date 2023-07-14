@@ -207,7 +207,7 @@ console.log("hello")
             >
                 <img
                     class="bg-neutral-focus text-neutral-content rounded-full w-24"
-                    src="src/assets/avatar.svg"
+                    src="../assets/avatar.svg"
                     alt=""
                 />
             </div>
@@ -237,12 +237,12 @@ console.log("hello")
                         >
                             <img
                                 class="linkLogo"
-                                src="src/assets/{link.platform}.svg"
+                                src="../assets/{link.platform}.svg"
                             />{link.platform}
                         </div>
                         <img
                             style="width:20px; height:20px;"
-                            src="src/assets/Arrow-002.svg"
+                            src="../assets/Arrow-002.svg"
                         /></button
                     >
                 </div>

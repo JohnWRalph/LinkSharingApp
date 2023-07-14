@@ -16,7 +16,7 @@
     <div class="navbar-start">
         <!-- svelte-ignore a11y-missing-attribute -->
         <a on:click={() => push("/")} class="btn btn-ghost normal-case text-xl"
-            ><img src="src/assets/Chain_link_icon.svg"/>devLinks
+            ><img src="../assets/Chain_link_icon.svg"/>devLinks
         </a>
     </div>
     <div class="navbar-center hidden lg:flex" />
