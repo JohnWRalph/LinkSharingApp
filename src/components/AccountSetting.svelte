@@ -188,7 +188,7 @@
                     for="fileInput"
                     ><img
                         style="width:50px;height:50px;"
-                        src="../assets/add_image.svg"
+                        src="../add_image.svg"
                     /></label
                 >
                 <input
