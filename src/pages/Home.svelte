@@ -76,8 +76,8 @@
     </div>
   </div>
 
-  <div class="tooltip" data-tip="View Example Profile">
-  <div on:click={()=> window.open("https://link-sharing-app.vercel.app/#/profile/jerryreid")} style="margin-top:20px;width:250px;cursor:pointer;" class="mockup-phone">
+  <div style="margin-top:40px;" class="tooltip" data-tip="View Example Profile">
+  <div on:click={()=> window.open("https://link-sharing-app.vercel.app/#/profile/jerryreid")} style="width:250px;cursor:pointer;" class="mockup-phone">
     <div class="camera"></div> 
     <div class="display">
       <div  class="phone-1">
