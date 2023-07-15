@@ -24,15 +24,16 @@
         measurementId: import.meta.env.VITE_MEASUREMENT_ID,
     };
     initializeApp(firebaseConfig);
-    const auth = getAuth();
-    auth.languageCode = 'it';
-    const provider = new GoogleAuthProvider();
+    
+    // auth.languageCode = 'it';
+    // const provider = new GoogleAuthProvider();
     // signInWithRedirect(auth, provider);
     let password = "";
     let emailAddress = "";
 
     async function loginExistingUser(emailAddress, password) {
         //signinwithfirebase
+        const auth = getAuth();
         console.log("emailAddress", emailAddress);
         console.log("password", password)
         signInWithEmailAndPassword(auth, emailAddress, password)
