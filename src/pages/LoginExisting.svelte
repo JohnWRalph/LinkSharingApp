@@ -24,7 +24,7 @@
         measurementId: import.meta.env.VITE_MEASUREMENT_ID,
     };
     initializeApp(firebaseConfig);
-    
+    const auth = getAuth();
     // auth.languageCode = 'it';
     // const provider = new GoogleAuthProvider();
     // signInWithRedirect(auth, provider);
@@ -33,7 +33,6 @@
 
     async function loginExistingUser(emailAddress, password) {
         //signinwithfirebase
-        const auth = getAuth();
         console.log("emailAddress", emailAddress);
         console.log("password", password)
         signInWithEmailAndPassword(auth, emailAddress, password)
@@ -47,37 +46,38 @@
             })
             .catch((error) => {
                 const errorCode = error;
-
+                console.log("error", error);
                 console.log("error", errorCode);
-                if (errorCode === "auth/wrong-password") {
+                if (errorCode.code === "auth/wrong-password") {
                     alertState.set("error");
                     alertMessage.set("Wrong password.");
                     setTimeout(() => {
                         alertState.set("");
                         alertMessage.set("");
                     }, 3000);
-                } else if (errorCode === "auth/invalid-email") {
+                } else if (errorCode.code === "auth/invalid-email") {
+                    
                     alertState.set("error");
                     alertMessage.set("Invalid email.");
                     setTimeout(() => {
                         alertState.set("");
                         alertMessage.set("");
                     }, 3000);
-                } else if (errorCode === "auth/missing-email") {
+                } else if (errorCode.code === "auth/missing-email") {
                     alertState.set("error");
                     alertMessage.set("Missing email.");
                     setTimeout(() => {
                         alertState.set("");
                         alertMessage.set("");
                     }, 3000);
-                } else if (errorCode === "auth/missing-password") {
+                } else if (errorCode.code === "auth/missing-password") {
                     alertState.set("error");
                     alertMessage.set("Missing password.");
                     setTimeout(() => {
                         alertState.set("");
                         alertMessage.set("");
                     }, 3000);
-                } else if (errorCode === "auth/user-not-found") {
+                } else if (errorCode.code === "auth/user-not-found") {
                     alertState.set("error");
                     alertMessage.set("User not found.");
                     setTimeout(() => {

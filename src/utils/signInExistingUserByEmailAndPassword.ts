@@ -32,6 +32,7 @@ async function signInExistingUserByEmailAndPassword(
                     errorMessage.set("");
                 }, 3000);
             } else if (errorCode === "auth/invalid-email") {
+                // errorState.set("error");
                 errorMessage.set("Invalid email/password combination.");
                 setTimeout(() => {
                     errorMessage.set("");
