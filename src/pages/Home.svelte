@@ -77,15 +77,34 @@
   </div>
 
   <div style="margin-top:40px;" class="tooltip" data-tip="View Example Profile">
-  <div on:click={()=> window.open("https://link-sharing-app.vercel.app/#/profile/jerryreid")} style="width:250px;cursor:pointer;" class="mockup-phone">
-    <div class="camera"></div> 
-    <div class="display">
-      <div  class="phone-1">
-      <img style="height:100%; margin-top:25px;" src="../phone.jpg" alt="phone" />"  
+    <div
+      on:click={() =>
+        window.open("https://link-sharing-app.vercel.app/#/profile/jerryreid")}
+      style="width:250px;cursor:pointer;"
+      class="mockup-phone"
+    >
+      <div class="camera" />
+      <div class="display">
+        <div style="position:relative;" class="phone-1">
+          <img
+            class="finger"
+            style=" position: absolute;
+        height: 75px;
+        bottom: 50px;
+        left: 30%;
+        "
+            src="../finger.png"
+            alt="finger"
+          />"
+          <img
+            style="height:100%; margin-top:25px;"
+            src="../phone.jpg"
+            alt="phone"
+          />"
+        </div>
       </div>
     </div>
   </div>
-</div>
 {/if}
 
 <!-- <img style="width:300px; margin-top:20px;" src="src/assets/phone.jpg" alt="phone" />"   -->
@@ -93,4 +112,23 @@
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
+
+  /* Define the animation */
+  @keyframes translateUpDown {
+    0%,
+    100% {
+      /* Start and end positions */
+      transform: translateY(0); /* Initial position - no translation */
+    }
+    50% {
+      /* Middle position */
+      transform: translateY(-10px); /* Move 10px up */
+    }
+  }
+
+  /* Apply the animation to the image */
+  .finger {
+    
+    animation: translateUpDown 5s infinite; /* 5 seconds duration, infinite loop */
+  }
 </style>
