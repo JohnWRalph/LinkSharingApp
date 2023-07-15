@@ -165,6 +165,21 @@ async function createNewUserWithEmailAndPassword(
                 setTimeout(() => {
                     errorMessage.set("");
                 }, 3000);
+
+            }
+            if (errorCode === "auth/invalid-email") {
+                errorMessage.set("Invalid email.");
+                setTimeout(() => {
+                    errorMessage.set("");
+                }, 3000);
+
+            }
+            if (errorCode === "wrong-password") {
+                errorMessage.set("Wrong password.");
+                setTimeout(() => {
+                    errorMessage.set("");
+                }, 3000);
+
             }
         });
 }
