@@ -81,7 +81,7 @@
     <div class="camera"></div> 
     <div class="display">
       <div  class="phone-1">
-      <img style="height:100%; margin-top:25px;" src="phone.jpg" alt="phone" />"  
+      <img style="height:100%; margin-top:25px;" src="../phone.jpg" alt="phone" />"  
       </div>
     </div>
   </div>
