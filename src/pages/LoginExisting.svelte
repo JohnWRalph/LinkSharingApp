@@ -27,7 +27,7 @@
     const auth = getAuth();
     auth.languageCode = 'it';
     const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider);
+    // signInWithRedirect(auth, provider);
     let password = "";
     let emailAddress = "";
 
