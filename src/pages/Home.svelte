@@ -20,7 +20,6 @@
   const auth = getAuth();
 </script>
 
-
 {#if $isLoggedIn}
   <div class="flex flex-col w-full">
     <button on:click={() => push("/myProfile")} class="btn btn-primary"
@@ -47,34 +46,47 @@
   </div>
 {:else}
   <div>
-    <h1 class="text-5xl font-bold">Welcome to devLinks!</h1>
-    <p class="py-6">Manage all your social media links in one place. Generate a profile to share with others.</p>
-  </div>
-  <div class="flex flex-col w-full">
-    <div>
-      <button
-        style="width:250px;"
-        class="btn btn-primary"
-        on:click={() => push("/login")}
-      >
-        Login To Existing Account
-      </button>
+    <div style="margin-top:100px">
+      <h1 class="text-5xl font-bold">Welcome to devLinks!</h1>
+      <p class="py-6">
+        Manage all your social media links in one place. Generate a profile to
+        share with others.
+      </p>
     </div>
-    <div class="divider" />
-    <div>
-      <button
-        style="width:250px;"
-        class="btn btn-primary"
-        on:click={() => push("/createAccount")}
-      >
-        Create New Account
-      </button>
+    <div class="flex flex-col w-full">
+      <div>
+        <button
+          style="width:250px;"
+          class="btn btn-primary"
+          on:click={() => push("/login")}
+        >
+          Login To Existing Account
+        </button>
+      </div>
+      <div class="divider" />
+      <div>
+        <button
+          style="width:250px;"
+          class="btn btn-primary"
+          on:click={() => push("/createAccount")}
+        >
+          Create New Account
+        </button>
+      </div>
     </div>
   </div>
- 
-  
+
+  <div style="margin-top:20px;width:250px;" class="mockup-phone">
+    <div class="camera"></div> 
+    <div class="display">
+      <div  class=" phone-1">
+      <img style="height:100%; margin-top:25px;" src="src/assets/phone.jpg" alt="phone" />"  
+      </div>
+    </div>
+  </div>
 {/if}
 
+<!-- <img style="width:300px; margin-top:20px;" src="src/assets/phone.jpg" alt="phone" />"   -->
 <style global lang="postcss">
   @tailwind base;
   @tailwind components;

@@ -1,67 +1,3 @@
-<!-- <script lang="ts">
-  
-    import {
-        collection,
-        query,
-        where,
-     
-        getFirestore,
-    } from "firebase/firestore";
-    import { initializeApp } from "firebase/app";
-    let profile = "yahoo";
-
-    const firebaseConfig = {
-        apiKey: import.meta.env.VITE_API_KEY,
-        authDomain: import.meta.env.VITE_AUTH_DOMAIN,
-        projectId: import.meta.env.VITE_PROJECT_ID,
-        storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
-        messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
-        appId: import.meta.env.VITE_APP_ID,
-        measurementId: import.meta.env.VITE_MEASUREMENT_ID,
-    };
-console.log("hello")
-    const firebaseApp = initializeApp(firebaseConfig);
-    const db = getFirestore();
-    const profileRef = collection(db, profile);
-    
-    console.log("profileRef", profileRef);
-</script>
-
-<style global lang="postcss">
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
-
-    .card {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 50px;
-    }
-    .linkButtons {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-    }
-    .Youtube {
-        background-color: red;
-    }
-    .Twitter {
-        background-color: #2daae2;
-    }
-    .Github {
-        background-color: black;
-    }
-    .LinkedIn {
-        background-color: #0077b5;
-    }
-    .linkLogo {
-        height: 30px;
-    }
-</style> -->
 <script lang="ts">
     import { initializeApp } from "firebase/app";
     import {
@@ -76,12 +12,12 @@ console.log("hello")
     import { getFirestore } from "firebase/firestore";
     import { displayedProfile } from "../store/account";
     import { push } from "svelte-spa-router";
-
+    
+    
     const url = window.location.href;
     const profile = url.split("/").pop();
     console.log("url", url);
     console.log("profile", profile);
-    //return yahoo from url example.com/profile/yahoo
     const profilehash = profile.split("-").pop();
     console.log("profilehash", profilehash);
 
@@ -101,63 +37,7 @@ console.log("hello")
     const profilesRef = collection(db, "profiles");
     console.log("profilesRef", profilesRef);
 
-    async function setProfiles() {
-        await setDoc(doc(profilesRef, "yahoo"), {
-            hash: "yahoo123",
-            email: "yahoo@gamil.com",
-            links: [
-                {
-                    platform: "Youtube",
-                    url: "https://www.youtube.com/",
-                },
-                {
-                    platform: "Twitter",
-                    url: "https://twitter.com/",
-                },
-                {
-                    platform: "Github",
-                    url: "",
-                },
-            ],
-        });
-        await setDoc(doc(profilesRef, "google"), {
-            hash: "google123",
-            email: "google@gmail.com",
-            links: [
-                {
-                    platform: "Youtube",
-                    url: "https://www.youtube.com/",
-                },
-                {
-                    platform: "Twitter",
-                    url: "https://twitter.com/",
-                },
-                {
-                    platform: "Github",
-                    url: "",
-                },
-            ],
-        });
-        await setDoc(doc(profilesRef, "facebook"), {
-            hash: "facebook123",
-            email: "facebokk@gmail.com",
-            links: [
-                {
-                    platform: "Youtube",
-                    url: "https://www.youtube.com/",
-                },
-                {
-                    platform: "Twitter",
-                    url: "https://twitter.com/",
-                },
-                {
-                    platform: "Github",
-                    url: "",
-                },
-            ],
-        });
-    }
-
+    
     // setProfiles();
 
     const q = query(profilesRef);
@@ -173,12 +53,13 @@ console.log("hello")
                     displayName: doc.data().displayName,
                     email: doc.data().email,
                     emailVerified: doc.data().emailVerified,
-                    photoURL: doc.data().photoURL,
+                    photoURL: doc.data().userPhoto,
                     isPublic: doc.data().isPublic,
                     shareLink: doc.data().shareLink,
                     links: doc.data().links,
                 };
                 displayedProfile.set(userProfile);
+                console.log($displayedProfile.photoURL)
             }
         });
     }
@@ -191,7 +72,7 @@ console.log("hello")
     }, 3000);
 </script>
 
-<div class="card w-96 bg-base-100 shadow-xl">
+<div style="gap:20px;" class="card w-96 bg-base-100 shadow-xl">
     {#if $displayedProfile.photoURL}
         <div>
             <img

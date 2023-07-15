@@ -47,7 +47,7 @@
             .catch((error) => {
                 const errorCode = error;
                 console.log("error", error);
-                console.log("error", errorCode);
+                console.log("error", errorCode.code);
                 if (errorCode.code === "auth/wrong-password") {
                     alertState.set("error");
                     alertMessage.set("Wrong password.");

@@ -1,10 +1,6 @@
 <script lang="ts">
     import { email } from "../store/profile";
-    import {
-        
-        hashStore,
-       
-    } from "../store/account";
+    import { hashStore } from "../store/account";
     import { initializeApp } from "firebase/app";
     import {
         doc,
@@ -28,17 +24,35 @@
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 if (displayedName) {
-                    updateProfile(auth.currentUser, {
-                        displayName: displayedName,
-                    })
-                        .then(() => {
-                            // Profile updated!
-                            // ...
-                        })
-                        .catch((error) => {
-                            // An error occurred
-                            // ...
+                    async function updateDisplayName(displayName) {
+                        // console.log(userPhoto);
+                        const firebaseConfig = {
+                            apiKey: import.meta.env.VITE_API_KEY,
+                            authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+                            projectId: import.meta.env.VITE_PROJECT_ID,
+                            storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+                            messagingSenderId: import.meta.env
+                                .VITE_MESSAGING_SENDER_ID,
+                            appId: import.meta.env.VITE_APP_ID,
+                            measurementId: import.meta.env.VITE_MEASUREMENT_ID,
+                        };
+                        // Initialize Firebase
+
+                        //update hash field
+                        const app = initializeApp(firebaseConfig);
+
+                        //set links to firebase
+                        const db = getFirestore(app);
+                        const docRef = doc(db, "profiles", user.uid);
+
+                        await updateDoc(docRef, {
+                            displayName: displayName,
+                        }).then(() => {
+                            alertState.set("success");
+                            alertMessage.set("Profile Updated!");
                         });
+                    }
+                    updateDisplayName(displayedName);
                 }
                 if (avatar) {
                     async function updatePhoto(userPhoto) {
@@ -65,9 +79,8 @@
                         await updateDoc(docRef, {
                             userPhoto: userPhoto,
                         }).then(() => {
-                            console.log("photo updated");
-                            let status = "success";
-                            return status;
+                            alertState.set("success");
+                            alertMessage.set("Profile Updated!");
                         });
                     }
                     updatePhoto(avatar);
@@ -77,7 +90,8 @@
                         displayName: displayedName,
                     })
                         .then(() => {
-                            // Profile updated!
+                            alertState.set("success");
+                            alertMessage.set("Profile Updated!");
                             // ...
                         })
                         .catch((error) => {
@@ -110,9 +124,8 @@
                         await updateDoc(docRef, {
                             hash: hash,
                         }).then(() => {
-                            console.log("hash updated");
-                            let status = "success";
-                            return status;
+                            alertState.set("success");
+                            alertMessage.set("Profile Updated!");
                         });
                     }
                     updateHash(hash);
@@ -240,7 +253,7 @@
         </div>
 
         <div class="subBodyRight">
-           example.com/profile/{$hashStore}
+            example.com/profile/{$hashStore}
         </div>
     </div>
 </div>
