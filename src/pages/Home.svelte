@@ -76,14 +76,16 @@
     </div>
   </div>
 
-  <div style="margin-top:20px;width:250px;" class="mockup-phone">
+  <div class="tooltip" data-tip="View Example Profile">
+  <div on:click={()=> window.open("https://link-sharing-app.vercel.app/#/profile/jerryreid")} style="margin-top:20px;width:250px;cursor:pointer;" class="mockup-phone">
     <div class="camera"></div> 
     <div class="display">
-      <div  class=" phone-1">
+      <div  class="phone-1">
       <img style="height:100%; margin-top:25px;" src="src/assets/phone.jpg" alt="phone" />"  
       </div>
     </div>
   </div>
+</div>
 {/if}
 
 <!-- <img style="width:300px; margin-top:20px;" src="src/assets/phone.jpg" alt="phone" />"   -->
