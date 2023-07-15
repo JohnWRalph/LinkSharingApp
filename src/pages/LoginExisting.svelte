@@ -1,8 +1,10 @@
 <script>
     import { push } from "svelte-spa-router";
     import {
+    GoogleAuthProvider,
         getAuth,
         signInWithEmailAndPassword,
+        signInWithRedirect,
         signOut,
     } from "firebase/auth";
     import isLoggedIn from "../store/isLoggedIn";
@@ -23,12 +25,16 @@
     };
     initializeApp(firebaseConfig);
     const auth = getAuth();
-
+    auth.languageCode = 'it';
+    const provider = new GoogleAuthProvider();
+    signInWithRedirect(auth, provider);
     let password = "";
     let emailAddress = "";
 
     async function loginExistingUser(emailAddress, password) {
         //signinwithfirebase
+        console.log("emailAddress", emailAddress);
+        console.log("password", password)
         signInWithEmailAndPassword(auth, emailAddress, password)
             .then(async (userCredential) => {
                 const user = userCredential.user;
