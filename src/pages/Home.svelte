@@ -76,7 +76,7 @@
     </div>
   </div>
 
-  <div style="margin-top:40px;" class="tooltip" data-tip="View Example Profile">
+  <div style="margin-top:40px;" class="tooltip tooltip-open" data-tip="View Example Profile">
     <div
       on:click={() =>
         window.open("https://link-sharing-app.vercel.app/#/profile/jerryreid")}
