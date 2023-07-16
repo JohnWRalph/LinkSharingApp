@@ -129,6 +129,6 @@
   /* Apply the animation to the image */
   .finger {
     
-    animation: translateUpDown 5s infinite; /* 5 seconds duration, infinite loop */
+    animation: translateUpDown 3s infinite; /* 5 seconds duration, infinite loop */
   }
 </style>
