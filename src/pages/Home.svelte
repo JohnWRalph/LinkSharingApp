@@ -79,7 +79,7 @@
   <div style="margin-top:40px;" class="tooltip tooltip-open" data-tip="View Example Profile">
     <div
       on:click={() =>
-        window.open("https://link-sharing-app.vercel.app/#/profile/jerryreid")}
+        window.open("https://my-link-hub.vercel.app/#/profile/jerryreid")}
       style="width:250px;cursor:pointer;"
       class="mockup-phone"
     >
