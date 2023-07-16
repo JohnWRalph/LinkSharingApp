@@ -47,7 +47,7 @@
 {:else}
   <div>
     <div style="margin-top:100px">
-      <h1 class="text-5xl font-bold">Welcome to devLinks!</h1>
+      <h1 class="text-5xl font-bold">Welcome to MyLinkHub!</h1>
       <p class="py-6">
         Manage all your social media links in one place. Generate a profile to
         share with others.
