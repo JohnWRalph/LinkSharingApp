@@ -112,7 +112,16 @@
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
+.mockup-phone{
+  /* add shadow*/
+ margin-bottom: 40px;
+  box-shadow: 14px 14px 4px rgba(0, 0, 0, .5);
 
+  transition:transform .2s ease;
+}
+.mockup-phone:active{
+  transform:scale(.95);
+}
   /* Define the animation */
   @keyframes translateUpDown {
     0%,
@@ -131,4 +140,5 @@
     
     animation: translateUpDown 3s infinite; /* 5 seconds duration, infinite loop */
   }
+  
 </style>
