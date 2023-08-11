@@ -72,7 +72,7 @@
     }, 3000);
 </script>
 
-<div style="gap:20px;" class="card w-96 bg-base-100 shadow-xl">
+<div style="gap:20px;" style="box-shadow: 8px 18px 16px 0" class="card w-96 bg-base-100 shadow-xl">
     {#if $displayedProfile.photoURL}
         <div>
             <img
