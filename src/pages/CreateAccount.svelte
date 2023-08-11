@@ -78,7 +78,7 @@
                 </div>
                 <div class="tooltip" data-tip="Set your profile link. This is how others will be able to
                 find and view your profile
-                (example.com/profile/JoeSmith123). Must be 0-9, a-z, A-Z, no
+                (https://my-link-hub.vercel.app/#/profile/JoeSmith123). Must be 0-9, a-z, A-Z, no
                 spaces, and 3-20 characters long.">
                   <label class="label">
                     <span class="label-text">Profile Link</span>
@@ -94,7 +94,7 @@
                 <div
                     style="overflow-wrap:anywhere; margin-top:5px; background-color:#f2f2f2;border-radius:20px;"
                 >
-                    Your Profile Link: example.com/profile/{profileHash}
+                    Your Profile Link: https://my-link-hub.vercel.app/#/profile/{profileHash}
                 </div>
             </div>
            

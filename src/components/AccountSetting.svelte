@@ -254,7 +254,7 @@
         </div>
 
         <div class="subBodyRight">
-            example.com/profile/<input
+            https://my-link-hub.vercel.app/#/profile/<input
                 style="width: 100px; margin-right:5px;margin-left:5px;"
                 bind:value={hash}
                 type="text"
@@ -269,7 +269,7 @@
         </div>
 
         <div class="subBodyRight">
-            example.com/profile/{$hashStore}
+            https://my-link-hub.vercel.app/#/profile/d{$hashStore}
         </div>
     </div>
 </div>
