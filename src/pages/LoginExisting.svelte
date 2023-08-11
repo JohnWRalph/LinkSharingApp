@@ -86,6 +86,7 @@
                 }
             });
     }
+   
 </script>
 
 <div style="box-shadow: 8px 18px 16px 0" class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
