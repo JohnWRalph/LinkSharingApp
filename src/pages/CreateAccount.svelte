@@ -31,7 +31,7 @@
             </div>
         </div>
     {:else}
-        <div class="card-body">
+        <div style="box-shadow: 8px 18px 16px 0" class="card-body">
             <div class="form-control">
                 <!-- svelte-ignore a11y-label-has-associated-control -->
 

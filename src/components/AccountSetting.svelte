@@ -50,6 +50,10 @@
                         }).then(() => {
                             alertState.set("success");
                             alertMessage.set("Profile Updated!");
+                            setTimeout(() => {
+                                alertState.set("");
+                                alertMessage.set("");
+                            }, 3000);
                         });
                     }
                     updateDisplayName(displayedName);
@@ -81,6 +85,10 @@
                         }).then(() => {
                             alertState.set("success");
                             alertMessage.set("Profile Updated!");
+                            setTimeout(() => {
+                                alertState.set("");
+                                alertMessage.set("");
+                            }, 3000);
                         });
                     }
                     updatePhoto(avatar);
@@ -92,6 +100,10 @@
                         .then(() => {
                             alertState.set("success");
                             alertMessage.set("Profile Updated!");
+                            setTimeout(() => {
+                                alertState.set("");
+                                alertMessage.set("");
+                            }, 3000);
                             // ...
                         })
                         .catch((error) => {
@@ -126,6 +138,10 @@
                         }).then(() => {
                             alertState.set("success");
                             alertMessage.set("Profile Updated!");
+                            setTimeout(() => {
+                                alertState.set("");
+                                alertMessage.set("");
+                            }, 3000);
                         });
                     }
                     updateHash(hash);

@@ -25,9 +25,6 @@
     };
     initializeApp(firebaseConfig);
     const auth = getAuth();
-    // auth.languageCode = 'it';
-    // const provider = new GoogleAuthProvider();
-    // signInWithRedirect(auth, provider);
     let password = "";
     let emailAddress = "";
 
@@ -110,7 +107,6 @@
                             })
                             .catch((error) => {
                                 // An error happened.
-                                console.log("signout error");
                             })}
                     style="width:250px;"
                     class="btn btn-primary">Logout</button
@@ -118,18 +114,20 @@
             </div>
         </div>
     {:else}
-        <div class="card-body">
+        <div style="box-shadow: 8px 18px 16px 0" class="card-body">
             <div class="form-control">
                 <!-- svelte-ignore a11y-label-has-associated-control -->
                 <label class="label">
                     <span class="label-text">Email</span>
                 </label>
                 <input
+                style="border:1px solid black;"
                     bind:value={emailAddress}
                     type="text"
                     placeholder="email"
                     class="input input-bordered"
                 />
+                Sample email: devlinksapplogin@gmail.com
             </div>
             <div class="form-control">
                 <!-- svelte-ignore a11y-label-has-associated-control -->
@@ -139,16 +137,14 @@
                 <form class="form-control mt-6">
                     <input
                         bind:value={password}
+                        style="border:1px solid black;"
                         type="text"
                         placeholder="password"
                         class="input input-bordered"
                     />
-                    <!-- svelte-ignore a11y-label-has-associated-control -->
+                    Sample password: password1
                     <label class="label">
-                        <!-- svelte-ignore a11y-invalid-attribute -->
-                        <!-- <a href="#" class="label-text-alt link link-hover"
-                            >Forgot password?</a
-                        > -->
+                 
                     </label>
                 </form>
 
