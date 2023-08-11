@@ -23,7 +23,7 @@
     let newPassword2 = "";
 </script>
 
-<div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+<div style="box-shadow: 8px 18px 16px 0" class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
     {#if $isLoggedIn}
         <div class="card-body">
             <div class="form-control mt-6">
@@ -31,7 +31,7 @@
             </div>
         </div>
     {:else}
-        <div style="box-shadow: 8px 18px 16px 0" class="card-body">
+        <div  class="card-body">
             <div class="form-control">
                 <!-- svelte-ignore a11y-label-has-associated-control -->
 
