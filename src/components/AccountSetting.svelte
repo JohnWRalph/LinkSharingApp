@@ -175,7 +175,7 @@
     }
 </script>
 
-<div class="settingsHeaderContainer">
+<div  class="settingsHeaderContainer">
     <h1 class="settingsHeader font-bold">Profile Details</h1>
     <p class="">
         Add or edit your details to create a personal touch to your profile.

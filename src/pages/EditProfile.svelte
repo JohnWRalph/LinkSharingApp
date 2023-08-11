@@ -26,7 +26,7 @@
     />
 </div>
 
-<div class="editSettingsBody">
+<div  style="box-shadow: 8px 18px 16px 0;border-radius:20px;" class="editSettingsBody">
     {#if activeTab === "profile"}
     <div>
           <AccountSetting/>
