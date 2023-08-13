@@ -18,16 +18,12 @@ async function setLinksToDB(uid, links) {
     //set links to firebase
     const db = getFirestore(app);
     //get doc
-    // const docRef = doc(db, "profiles", uid);
-    // //log doc
-    // console.log(docRef)
-    console.log(uid)
+   
     const docRef = doc(db, "profiles", uid,);
 
     await updateDoc(docRef, {
         links: links,
     }).then(() => {
-       console.log("links updated")
         let status = "success";
         return status;
     });

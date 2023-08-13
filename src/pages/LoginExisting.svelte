@@ -30,8 +30,6 @@
 
     async function loginExistingUser(emailAddress, password) {
         //signinwithfirebase
-        console.log("emailAddress", emailAddress);
-        console.log("password", password)
         signInWithEmailAndPassword(auth, emailAddress, password)
             .then(async (userCredential) => {
                 const user = userCredential.user;
@@ -44,7 +42,6 @@
             .catch((error) => {
                 const errorCode = error;
                 console.log("error", error);
-                console.log("error", errorCode.code);
                 if (errorCode.code === "auth/wrong-password") {
                     alertState.set("error");
                     alertMessage.set("Wrong password.");

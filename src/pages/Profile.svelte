@@ -16,10 +16,8 @@
     
     const url = window.location.href;
     const profile = url.split("/").pop();
-    console.log("url", url);
-    console.log("profile", profile);
     const profilehash = profile.split("-").pop();
-    console.log("profilehash", profilehash);
+  
 
     const firebaseConfig = {
         apiKey: import.meta.env.VITE_API_KEY,
@@ -35,20 +33,13 @@
     const db = getFirestore();
 
     const profilesRef = collection(db, "profiles");
-    console.log("profilesRef", profilesRef);
-
-    
-    // setProfiles();
-
     const q = query(profilesRef);
 
     async function queryDocs(): Promise<any> {
         const querySnapshot = await getDocs(q);
-        // console.log("querySnapshot", querySnapshot,where("hash", "==", profilehash));
-
         querySnapshot.forEach((doc) => {
             if (doc.data().hash === profilehash) {
-                console.log("doc.data()", doc.data());
+                
                 const userProfile = {
                     displayName: doc.data().displayName,
                     email: doc.data().email,
@@ -59,7 +50,7 @@
                     links: doc.data().links,
                 };
                 displayedProfile.set(userProfile);
-                console.log($displayedProfile.photoURL)
+               
             }
         });
     }
@@ -103,8 +94,6 @@
       
     {/if}
     <div class="linkButtons">
-        <!-- {#await $displayedProfile.links && $displayedProfile.links.length}
-           -->
         {#if $displayedProfile.links && $displayedProfile.links.length}
             {#each $displayedProfile.links as link, i}
                 <div style="display:flex;flex-direction:row;">

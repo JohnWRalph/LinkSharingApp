@@ -31,7 +31,7 @@
         signOut(auth)
           .then(() => {
             // Sign-out successful.
-            console.log("signout successful");
+      
             isLoggedIn.set(false);
             //reload window
             window.location.reload();

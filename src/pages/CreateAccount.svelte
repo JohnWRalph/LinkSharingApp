@@ -108,7 +108,6 @@
                             newPassword2,
                             profileHash
                         ).then((result) => {
-                            console.log(result);
                             if (result) {
                                 isLoggedIn.set(true);
                                 push("/myProfile");

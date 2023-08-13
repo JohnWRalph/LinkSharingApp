@@ -177,7 +177,6 @@
 
 <button
     class="btn btn-primary"
-    on:click={() => console.log($userAccount)}
     on:click={() => getLinktoKeep($userAccount.uid)}
 >
     Save Changes

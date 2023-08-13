@@ -17,7 +17,6 @@ async function signInExistingUserByEmailAndPassword(
         //return promise of user creditionals
         .then(async (userCredential) => {
             // Signed in
-            console.log("userCredential", userCredential);
             userAccount.set(userCredential.user);
             push("/myProfile");
 

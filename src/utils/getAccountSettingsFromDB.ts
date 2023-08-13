@@ -33,7 +33,7 @@ async function getAccountSettingsfromDB(uid) {
         userPhotoStore.set(docSnap.data().userPhoto);
 
     } else {
-        console.log("No such document!");
+   
     }
 }
 

@@ -66,7 +66,7 @@ async function createNewUserWithEmailAndPassword(
         }, 3000);
         return;
     }
-    console.log(newPassword1, newPassword2)
+
     //passwords must match
     if (newPassword1 !== newPassword2) {
         alertState.set("error");
@@ -77,7 +77,7 @@ async function createNewUserWithEmailAndPassword(
         }, 3000);
         return;
     }
-    console.log(profileHash)
+
     //if no profile link set error message
     if (!profileHash) {
         alertState.set("error");
@@ -104,7 +104,7 @@ async function createNewUserWithEmailAndPassword(
     createUserWithEmailAndPassword(auth, newEmailAddress, newPassword1)
         .then(async (userCredential) => {
             // Signed in
-            console.log(userCredential)
+  
             userAccount.set(userCredential.user);
             
             const user = userCredential.user;

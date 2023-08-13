@@ -57,7 +57,7 @@ const optionsSelect = {
    
     },
     onMove: function () {
-     console.log("changemove")
+   
     },
 };
 export { options, optionsSelect };

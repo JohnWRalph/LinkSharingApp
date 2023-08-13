@@ -3,7 +3,8 @@
     import LinkSettings from "../components/LinkSettings.svelte";
     import { loginCheck } from "../utils/loginCheck";
     import isLoggedIn from "../store/isLoggedIn";
-
+    
+    //check if user is logged in
     loginCheck($isLoggedIn);
     let activeTab: string = "links";
 </script>

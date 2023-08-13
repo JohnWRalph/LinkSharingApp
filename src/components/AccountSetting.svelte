@@ -16,16 +16,11 @@
         if (avatar) {
             avatar = avatar.src;
         }
-        console.log("avatar", avatar);
-        console.log("displayedName", displayedName);
-        console.log("hash", hash);
-
         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 if (displayedName) {
                     async function updateDisplayName(displayName) {
-                        // console.log(userPhoto);
                         const firebaseConfig = {
                             apiKey: import.meta.env.VITE_API_KEY,
                             authDomain: import.meta.env.VITE_AUTH_DOMAIN,
@@ -37,7 +32,6 @@
                             measurementId: import.meta.env.VITE_MEASUREMENT_ID,
                         };
                         // Initialize Firebase
-
                         //update hash field
                         const app = initializeApp(firebaseConfig);
 
@@ -60,7 +54,7 @@
                 }
                 if (avatar) {
                     async function updatePhoto(userPhoto) {
-                        console.log(userPhoto);
+                       
                         const firebaseConfig = {
                             apiKey: import.meta.env.VITE_API_KEY,
                             authDomain: import.meta.env.VITE_AUTH_DOMAIN,
@@ -113,7 +107,6 @@
                 }
                 if (hash) {
                     async function updateHash(hash) {
-                        console.log(hash);
                         const firebaseConfig = {
                             apiKey: import.meta.env.VITE_API_KEY,
                             authDomain: import.meta.env.VITE_AUTH_DOMAIN,
@@ -162,13 +155,11 @@
         const file = input.files[0];
         if (file) {
             showImage = true;
-
             const reader = new FileReader();
             reader.addEventListener("load", function () {
                 image.setAttribute("src", reader.result);
             });
             reader.readAsDataURL(file);
-
             return;
         }
         showImage = false;
@@ -202,7 +193,7 @@
                     alt="avatar"
                 />
             {:else}
-                <!-- <span bind:this={placeholder}>Image Preview</span> -->
+                
             {/if}
 
             <form
