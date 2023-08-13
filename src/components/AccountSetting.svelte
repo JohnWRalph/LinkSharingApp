@@ -127,7 +127,7 @@
                         const docRef = doc(db, "profiles", user.uid);
 
                         await updateDoc(docRef, {
-                            hash: hash,
+                            hash: hash.toLowerCase(),
                         }).then(() => {
                             alertState.set("success");
                             alertMessage.set("Profile Updated!");
@@ -260,7 +260,7 @@
         </div>
 
         <div class="subBodyRight">
-            https://my-link-hub.vercel.app/#/profile/d{$hashStore}
+            https://my-link-hub.vercel.app/#/profile/{$hashStore}
         </div>
     </div>
 </div>
@@ -356,14 +356,7 @@
     }
 
     .sortable_item {
-        /* display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #f2f2f2;
-        width: 90%;
-        padding: 1rem;
-        margin-bottom: 1rem; */
+    
         margin-bottom: 20px;
     }
 

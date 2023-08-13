@@ -16,7 +16,7 @@
     };
     initializeApp(firebaseConfig);
     const auth = getAuth();
-
+    
     let profileHash = "";
     let newEmailAddress = "";
     let newPassword1 = "";
@@ -126,4 +126,8 @@
     @tailwind base;
     @tailwind components;
     @tailwind utilities;
+
+    .input{
+        border-color: black;
+    }
 </style>
