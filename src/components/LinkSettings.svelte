@@ -92,7 +92,7 @@
     {#each $links as link, i}
         <Sortable items={link} let:item {options}>
             {#if link[0].class !== "hide"}
-                <div class="editSubBody linkToKeepBody">
+                <div style="box-shadow: 8px 18px 16px 0" class="editSubBody linkToKeepBody">
                     <button
                         class="btn btn-square btn-ghost handle handle-bottom"
                     >
